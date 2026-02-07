@@ -1,0 +1,152 @@
+/* --- Professional Landing Page --- */
+.landing-page {
+  background-color: #0f172a;
+  min-height: 100vh;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  /* Removed border-radius to fix white edges */
+}
+
+.landing-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 10%;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: #ef4444;
+}
+
+.punchline {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-login-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-login-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  padding: 4rem 10%;
+  gap: 4rem;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: white;
+  /* Explicitly set to white to override global h1 styles */
+}
+
+.hero-content h1 span {
+  background: linear-gradient(90deg, #ef4444, #f43f5e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.badge {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.4);
+  margin-bottom: 1.5rem;
+}
+
+/* Abstract Visuals */
+.hero-visual {
+  position: relative;
+}
+
+.abstract-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 24px;
+}
+
+.main-card {
+  width: 350px;
+  transform: rotate(-5deg);
+}
+
+.mini-card {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  width: 150px;
+  transform: rotate(10deg);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(244, 63, 94, 0.2));
+}
+
+.skeleton-line {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.skeleton-line.short {
+  width: 40%;
+}
+
+.skeleton-line.medium {
+  width: 70%;
+}
+
+.skeleton-line.long {
+  width: 100%;
+}
+
+.skeleton-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
