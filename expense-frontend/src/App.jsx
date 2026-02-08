@@ -11,7 +11,9 @@ import ExpenseList from "./components/ExpenseList";
 import ExpenseModal from "./components/ExpenseModal";
 import { ThemeToggle } from "./components/ThemeToggle";
 
-const API_BASE = `${import.meta.env.VITE_API_BASE_URL}/api`;
+// Use environment variable or fallback to the known backend URL
+const BACKEND_URL = import.meta.env.VITE_API_BASE_URL || "https://moneynotes-oi32.onrender.com";
+const API_BASE = `${BACKEND_URL}/api`;
 
 function App() {
   const { getToken, isLoaded, isSignedIn } = useAuth();
