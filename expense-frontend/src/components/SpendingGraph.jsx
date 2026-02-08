@@ -4,7 +4,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 const SpendingGraph = ({ expenses, loading }) => {
     // Process data for the chart
     const chartData = useMemo(() => {
-        if (!expenses || expenses.length === 0) return [];
+        if (!expenses || !Array.isArray(expenses) || expenses.length === 0) return [];
 
         // 1. Group by date
         const grouped = expenses.reduce((acc, curr) => {

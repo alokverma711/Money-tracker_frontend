@@ -117,7 +117,12 @@ function App() {
         },
       });
 
-      setExpenses(response.data || []);
+      if (Array.isArray(response.data)) {
+        setExpenses(response.data);
+      } else {
+        console.error("Unexpected expenses response format:", response.data);
+        setExpenses([]);
+      }
     } catch (err) {
       console.error("Error fetching expenses:", err);
       setError("Something went wrong while loading your expenses.");
