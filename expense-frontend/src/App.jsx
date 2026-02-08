@@ -274,7 +274,21 @@ function App() {
 
     } catch (err) {
       console.error("Error creating expense:", err);
-      setError("Failed to create expense. Please try again.");
+      let msg = "Failed to create expense. Please try again.";
+      if (err.response?.data) {
+        if (typeof err.response.data === 'string') msg = err.response.data;
+        else if (err.response.data.detail) msg = err.response.data.detail;
+        // Handle DRF validation errors (object)
+        else if (typeof err.response.data === 'object') {
+           // Extract first error message
+           const keys = Object.keys(err.response.data);
+           if (keys.length > 0) {
+             const firstError = err.response.data[keys[0]];
+             msg = `${keys[0]}: ${Array.isArray(firstError) ? firstError[0] : firstError}`;
+           }
+        }
+      }
+      setError(msg);
     } finally {
       setSubmitting(false);
     }
