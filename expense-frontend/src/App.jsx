@@ -13,7 +13,8 @@ import { ThemeToggle } from "./components/ThemeToggle";
 
 // Use environment variable or fallback to the known backend URL
 const BACKEND_URL = import.meta.env.VITE_API_BASE_URL || "https://moneynotes-oi32.onrender.com";
-const API_BASE = `${BACKEND_URL}/api`;
+const IS_VERCEL = typeof window !== "undefined" && window.location.hostname.endsWith(".vercel.app");
+const API_BASE = IS_VERCEL ? "/api" : `${BACKEND_URL}/api`;
 
 function App() {
   const { getToken, isLoaded, isSignedIn } = useAuth();

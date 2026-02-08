@@ -1,7 +1,9 @@
 {
-    "routes": [
-      { "handle": "filesystem" },
-      { "src": "/(.*)", "dest": "/index.html" }
-    ]
-  }
-  
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "https://moneynotes-oi32.onrender.com/api/$1" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
